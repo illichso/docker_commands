@@ -9,7 +9,7 @@ docker run -i -t openjdk
 ...
 
 Cleanup:
-$ docker volume rm $(docker volume ls -qf dangling=true)
+docker volume rm $(docker volume ls -qf dangling=true)
 
 
 
