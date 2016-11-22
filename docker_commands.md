@@ -1,0 +1,18 @@
+docker rm  $(docker ps -a -q) -f
+docker ps -a
+
+docker rmi $(docker images -q) -f
+docker images -a
+
+docker build -t openjdk:8 .
+docker run -i -t openjdk
+...
+
+Cleanup:
+$ docker volume rm $(docker volume ls -qf dangling=true)
+
+
+
+docker-compose down & docker rm  $(docker ps -a -q) -f & docker rmi courses_mongodb -f
+
+docker-compose down & docker rm  $(docker ps -a -q) -f & docker rmi courses_db & docker rmi $(docker images -q --filter "dangling=true")
