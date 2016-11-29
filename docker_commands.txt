@@ -17,4 +17,4 @@ docker-compose down
 docker rm  $(docker ps -a -q) -f
 docker volume rm $(docker volume ls -qf dangling=true)
 docker rmi $(docker images -qf dangling=true) -f
-docker rmi courses_db courses_web -f
+docker rmi courses_web courses_db courses_backend courses_frontend -f
